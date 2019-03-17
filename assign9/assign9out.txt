@@ -1,0 +1,99 @@
+MariaDB [z1761739]> use z1761739;
+Database changed
+MariaDB [z1761739]> create table movie(pk int auto_increment primary key, name char(15));
+Query OK, 0 rows affected (0.35 sec)
+
+MariaDB [z1761739]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('Das Boot');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('The Godfather');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('Jaws');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('The Black Stallion');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+MariaDB [z1761739]> commit;
+Query OK, 0 rows affected (0.09 sec)
+
+MariaDB [z1761739]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1761739]> \t
+
+MariaDB [z1761739]> use z1761739;
+Database changed
+MariaDB [z1761739]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1761739]> delete from movie where pk = 3;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1761739]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+5 rows in set (0.00 sec)
+
+MariaDB [z1761739]> update movie set name = 'Iron Man' where pk = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> update movie set name = 'Con Air' where pk = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> insert into movie (name) values('Grease');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [z1761739]> select * from movie;
++----+----------+
+| pk | name     |
++----+----------+
+|  1 | Das Boot |
+|  2 | Iron Man |
+|  4 | Con Air  |
+|  5 | Shrek    |
+|  6 | StarTrek |
+|  7 | Grease   |
++----+----------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1761739]> rollback;
+Query OK, 0 rows affected (0.04 sec)
+
+MariaDB [z1761739]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1761739]> \t

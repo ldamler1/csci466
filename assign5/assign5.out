@@ -1,0 +1,332 @@
+Database changed
+MariaDB [BabyName]> source assign5.sql
++-------+-------+--------+------+-------+
+| name  | count | gender | year | place |
++-------+-------+--------+------+-------+
+| Aaban |     5 | M      | 2007 | US    |
+| Aaban |     6 | M      | 2009 | US    |
+| Aaban |     9 | M      | 2010 | US    |
+| Aaban |    11 | M      | 2011 | US    |
+| Aaban |    11 | M      | 2012 | US    |
+| Aaban |     6 | M      | 2013 | NY    |
+| Aaban |    14 | M      | 2013 | US    |
+| Aaban |     6 | M      | 2014 | NY    |
+| Aaban |    16 | M      | 2014 | US    |
+| Aaban |    15 | M      | 2015 | US    |
++-------+-------+--------+------+-------+
+10 rows in set (0.00 sec)
+
++------+
+| year |
++------+
+| 1970 |
+| 1971 |
+| 1972 |
+| 1977 |
+| 1978 |
+| 1979 |
+| 1980 |
+| 1981 |
+| 1982 |
+| 1983 |
++------+
+10 rows in set (0.00 sec)
+
++----------+
+| name     |
++----------+
+| Aadam    |
+| Aadil    |
+| Aaditya  |
+| Aailyah  |
+| Aaisha   |
+| Aakash   |
+| Aalaiyah |
+| Aalayah  |
+| Aaleah   |
+| Aaleigha |
++----------+
+10 rows in set (0.00 sec)
+
++-----------+
+| max(name) |
++-----------+
+| Zyan      |
++-----------+
+1 row in set (0.00 sec)
+
++-----------+
+| max(name) |
++-----------+
+| Zyria     |
++-----------+
+1 row in set (0.00 sec)
+
++----------+
+| name     |
++----------+
+| Foluke   |
+| Jeanluke |
+| Jeanluke |
+| Johnluke |
+| Johnluke |
+| Johnluke |
+| Johnluke |
+| Johnluke |
+| Johnluke |
+| Johnluke |
++----------+
+10 rows in set (0.00 sec)
+
++----------+
+| name     |
++----------+
+| Foluke   |
+| Jonluke  |
+| Luke     |
+| Luke     |
+| Luke     |
+| Luke     |
+| Jonluke  |
+| Johnluke |
+| Olukemi  |
+| Jonluke  |
++----------+
+10 rows in set (0.00 sec)
+
++------+
+| name |
++------+
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
+| Luke |
++------+
+10 rows in set (0.01 sec)
+
++----------+
+| count(*) |
++----------+
+|  7601706 |
++----------+
+1 row in set (0.00 sec)
+
++-------------+
+| count(name) |
++-------------+
+|       64807 |
++-------------+
+1 row in set (0.00 sec)
+
++-------------+
+| count(name) |
++-------------+
+|       63180 |
++-------------+
+1 row in set (0.00 sec)
+
++----------------------------+
+| count(distinct name,place) |
++----------------------------+
+|                       1583 |
+|                       6501 |
+|                       4825 |
+|                       5500 |
+|                      18986 |
+|                       4953 |
+|                       3531 |
+|                       2622 |
+|                       1677 |
+|                      10820 |
++----------------------------+
+10 rows in set (0.00 sec)
+
+MariaDB [BabyName]> exit
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 63677
+Server version: 10.1.26-MariaDB-0+deb9u1 Debian 9.1
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [z1761739]> source assign5.sql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
++--------------------+
+| Tables_in_BabyName |
++--------------------+
+| BabyName           |
++--------------------+
+1 row in set (0.00 sec)
+
++-------+-------+--------+------+-------+
+| name  | count | gender | year | place |
++-------+-------+--------+------+-------+
+| Aaban |     5 | M      | 2007 | US    |
+| Aaban |     6 | M      | 2009 | US    |
+| Aaban |     9 | M      | 2010 | US    |
+| Aaban |    11 | M      | 2011 | US    |
+| Aaban |    11 | M      | 2012 | US    |
+| Aaban |     6 | M      | 2013 | NY    |
+| Aaban |    14 | M      | 2013 | US    |
+| Aaban |     6 | M      | 2014 | NY    |
+| Aaban |    16 | M      | 2014 | US    |
+| Aaban |    15 | M      | 2015 | US    |
++-------+-------+--------+------+-------+
+10 rows in set (0.00 sec)
+
++------+
+| year |
++------+
+| 1970 |
+| 1971 |
+| 1972 |
+| 1977 |
+| 1978 |
+| 1979 |
+| 1980 |
+| 1981 |
+| 1982 |
+| 1983 |
++------+
+10 rows in set (0.00 sec)
+
++----------+
+| name     |
++----------+
+| Aadam    |
+| Aadil    |
+| Aaditya  |
+| Aailyah  |
+| Aaisha   |
+| Aakash   |
+| Aalaiyah |
+| Aalayah  |
+| Aaleah   |
+| Aaleigha |
++----------+
+10 rows in set (0.00 sec)
+
++-----------+
+| max(name) |
++-----------+
+| Zyan      |
++-----------+
+1 row in set (0.00 sec)
+
++-----------+
+| max(name) |
++-----------+
+| Zyria     |
++-----------+
+1 row in set (0.00 sec)
+
++-------------+
+| name        |
++-------------+
+| Foluke      |
+| Jeanluke    |
+| Johnluke    |
+| Jonluke     |
+| Luke        |
+| Lukeanthony |
+| Luken       |
+| Lukes       |
+| Lukesha     |
+| Lukeshia    |
+| Lukeus      |
+| Olukemi     |
++-------------+
+12 rows in set (0.00 sec)
+
++----------+
+| count(*) |
++----------+
+|  7601706 |
++----------+
+1 row in set (0.00 sec)
+
++-------------+
+| count(name) |
++-------------+
+|       64807 |
++-------------+
+1 row in set (0.00 sec)
+
++-------------+
+| count(name) |
++-------------+
+|       63180 |
++-------------+
+1 row in set (0.00 sec)
+
++-------+----------------------------+
+| place | count(distinct name,place) |
++-------+----------------------------+
+| AK    |                       1583 |
+| AL    |                       6501 |
+| AR    |                       4825 |
+| AZ    |                       5500 |
+| CA    |                      18986 |
+| CO    |                       4953 |
+| CT    |                       3531 |
+| DC    |                       2622 |
+| DE    |                       1677 |
+| FL    |                      10820 |
+| GA    |                       9467 |
+| HI    |                       2870 |
+| IA    |                       4257 |
+| ID    |                       2874 |
+| IL    |                      10847 |
+| IN    |                       6392 |
+| KS    |                       4359 |
+| KY    |                       5178 |
+| LA    |                       6957 |
+| MA    |                       5185 |
+| MD    |                       5455 |
+| ME    |                       2146 |
+| MI    |                       8567 |
+| MN    |                       5374 |
+| MO    |                       6301 |
+| MS    |                       5486 |
+| MT    |                       2188 |
+| NC    |                       8598 |
+| ND    |                       2282 |
+| NE    |                       3383 |
+| NH    |                       1756 |
+| NJ    |                       7428 |
+| NM    |                       3333 |
+| NV    |                       2861 |
+| NY    |                      14101 |
+| OH    |                       9066 |
+| OK    |                       5548 |
+| OR    |                       4143 |
+| PA    |                       8851 |
+| RI    |                       1795 |
+| SC    |                       5632 |
+| SD    |                       2289 |
+| TN    |                       6750 |
+| TX    |                      16768 |
+| US    |                      95025 |
+| UT    |                       4489 |
+| VA    |                       7093 |
+| VT    |                       1358 |
+| WA    |                       5922 |
+| WI    |                       5369 |
+| WV    |                       3261 |
+| WY    |                       1524 |
++-------+----------------------------+
+52 rows in set (0.00 sec)
+

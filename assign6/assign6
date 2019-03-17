@@ -1,0 +1,59 @@
+/*1.) Lists owner names and boat in alphabetical order*/
+select LastName, FirstName, MarinaSlip.BoatName, MarinaSlip.BoatType
+	from Owner 
+		inner join MarinaSlip on Owner.OwnerNum = MarinaSlip.OwnerNum
+				order by LastName;
+
+/*2.) Lists owner's names who have more than one boat and the number of owner boats*/				
+select Owner.LastName, count(MarinaSlip.OwnerNum) as NumberOfBoats
+	from MarinaSlip
+		inner join Owner on MarinaSlip.OwnerNum = Owner.OwnerNum
+			group by Owner.LastName having count(MarinaSlip.OwnerNum) > 1;
+			
+/*3.) Lists each service request description and owner's last name*/
+select Owner.LastName, Description
+	from ServiceRequest
+		inner join MarinaSlip on ServiceRequest.SlipID = MarinaSlip.SlipID
+		inner join Owner on MarinaSlip.OwnerNum = Owner.OwnerNum;
+		
+/*4.) Lists each service description with the category and the amount of requests in each category*/
+select ServiceCategory.CategoryDescription, count(ServiceRequest.CategoryNum) as NumberOfRequests
+	from ServiceCategory
+		inner join ServiceRequest on ServiceCategory.CategoryNum = ServiceRequest.CategoryNum
+			group by ServiceCategory.CategoryNum;
+			
+/*5.) Lists owner info and marina name in alphabetical order by city and last name*/
+select Owner.LastName, Owner.FirstName, Owner.City, Owner.State, Marina.Name
+	from Owner
+		inner join MarinaSlip on Owner.OwnerNum = MarinaSlip.OwnerNum
+		inner join Marina on MarinaSlip.MarinaNum = Marina.MarinaNum
+			order by Owner.City, Owner.LastName;
+			
+/*6.) Lists the three marinas and total rental fee amount for each*/
+select Marina.Name, sum(MarinaSlip.RentalFee)
+	from Marina
+		inner join MarinaSlip on Marina.MarinaNum = MarinaSlip.MarinaNum
+			group by Marina.Name;
+			
+/*7.) Lists estimated, spent, and difference in hours for each service request as well as service ID*/
+select ServiceID, EstHours, SpentHours, EstHours-SpentHours as 'Difference'
+	from ServiceRequest;
+	
+/*8.) Lists owner last name and boat name of boats 30 feet and shorter*/
+select distinct Owner.LastName, MarinaSlip.BoatName
+	from Owner
+		inner join MarinaSlip on Owner.OwnerNum = MarinaSlip.OwnerNum
+			where MarinaSlip.Length < 31;
+			
+/*9.) Lists next service date for each boat*/
+select distinct(MarinaSlip.BoatName), ServiceRequest.NextServiceDate
+	from MarinaSlip
+		inner join ServiceRequest on MarinaSlip.SlipID = ServiceRequest.SlipID
+			order by NextServiceDate;
+			
+/*10.) Lists boat name, owner name, slip number, and marina name in alphabetical order by marina name and boat name*/
+select MarinaSlip.BoatName, Owner.LastName, MarinaSlip.SlipNum, Marina.Name as MarinaName
+	from MarinaSlip
+		inner join Owner on MarinaSlip.OwnerNum = Owner.OwnerNum
+		inner join Marina on MarinaSlip.MarinaNum = Marina.MarinaNum
+			order by Marina.Name, MarinaSlip.BoatName;

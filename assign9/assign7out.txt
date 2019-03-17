@@ -1,0 +1,55 @@
+MariaDB [z1761739]> use z1761739;
+Database changed
+MariaDB [z1761739]> select * from movie;
+Empty set (0.00 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('Shrek');
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [z1761739]> insert into movie (name) values('StarTrek');
+Query OK, 1 row affected (0.08 sec)
+
+MariaDB [z1761739]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1761739]> \t
+MariaDB [z1761739]> \t
+
+MariaDB [z1761739]> use z1761739;
+Database changed
+MariaDB [z1761739]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1761739]> use z1761739;
+Database changed
+MariaDB [z1761739]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1761739]> update movie set name = 'The Red Shoes' where pk = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> update movie set name = 'The Graduate' where pk = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> update movie set name = 'Shrek 2' where pk = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> update movie set name = 'Dr. StrangeLove' where pk = 6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1761739]> \t
+MariaDB [z1761739]> \t

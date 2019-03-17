@@ -1,0 +1,45 @@
+<!--
+assign10
+Name: Damler, Lucas
+zID: z1761739
+Semester: Spring 2018
+TA: Yaswanth Reddy Vayalpati
+Due: 2018
+-->
+
+<html>
+	<head>
+	<title>TEST_PAGE_1</title>
+	</head>
+	
+	<body>
+		<?php
+		include 'passwd.php';
+		
+		try {
+			$dsn = "mysql:host=courses;dbname=z1761739";
+			$pdo = new PDO($dsn, $username, $password);
+			
+			$sql = "SHOW TABLES;";
+			
+			
+			$rows = $result->fetchAll(PDO::FETCH_ASSOC);
+			
+			echo "<table border=1>";
+			foreach($rows as $row){
+				echo "<tr>";
+				foreach($row as $key => $field){
+					if(gettype($key) == 'integer')
+						echo "<td>$field</td>";
+				}
+				echo "</tr>";
+			}
+			echo "</table>";
+		}
+		catch(PDOexception $e) {
+			echo "Connection failed: " . $e->getMessage();
+		}
+		?>
+	</body>
+
+</html>
