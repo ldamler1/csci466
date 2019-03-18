@@ -5,7 +5,7 @@ using namespace std;
 
 #define host ""
 #define user ""
-#define passwd "@123"
+#define passwd ""
 #define database ""
 
 int main(void)
