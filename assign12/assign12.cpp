@@ -3,10 +3,10 @@
 
 using namespace std;
 
-#define host "courses"
-#define user "z1761739"
-#define passwd "eWarner@123"
-#define database "z1761739"
+#define host ""
+#define user ""
+#define passwd "@123"
+#define database ""
 
 int main(void)
 	{
